@@ -1,0 +1,59 @@
+\documentclass[a4paper, 12pt, oneside, fleqn]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+\usepackage[nobottomtitles]{titlesec}
+\usepackage[font=scriptsize]{caption}
+% \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+%\usepackage{makeidx,showidx}
+\usepackage{amsmath}
+\usepackage{harvard}
+\usepackage{longtable}
+\usepackage{imakeidx}
+%\usepackage{makeidx}
+\usepackage{pgfplots}
+\usepackage{url}
+\usepackage{lscape}
+
+\pgfplotsset{compat=1.17}
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\setcounter{secnumdepth}{5}
+
+\title{Statistics for BCS/ISEB Level 4 Apprenticeship in Data Analysis}
+\author{Stephen Booth MIET MBCS OLA \\ \url{https://orcid.org/0000-0003-3939-8493}}
+%\author{}
+%\date{May 2021}
+%\makeindex
+\makeindex[name=terms, columns=2, title= Index of Terms]
+\makeindex[name=people, columns=1, title = Notable People in Statistics]
+\begin{document}
+
+
+\maketitle
+\tableofcontents
+\listoffigures
+\listoftables
+
+\include{./chapters/basicstats}
+\include{./chapters/Distributions}
+\include{./chapters/Bayestherom}
+\include{./chapters/ttest}
+\include{./chapters/ftest}
+\include{./chapters/ztest}
+
+\include{chapters/Frauddetection}
+
+\cleardoublepage
+\printindex[terms]
+
+\cleardoublepage
+\printindex[people]
+
+\include{chapters/endmatter}
+
+\end{document}
+

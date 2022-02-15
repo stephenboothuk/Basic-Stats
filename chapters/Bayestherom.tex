@@ -1,0 +1,31 @@
+\chapter{Bayes Theorem}
+
+Bayes Theorem deals with conditional probability, the probability of a hypothesis being true given that another fact is true.  If $\theta$ is the hypothesis and $\textbf{D}$ is the fact known to be true then this is given by: 
+\begin{equation}
+\label{eq:bayes}
+P(\theta|\textbf{D}) = P(\theta ) \cdot \frac{P(\textbf{D} |\theta)}{P(\textbf{D})} 
+\end{equation}
+
+$P(\theta)$ is the probability that the hypothesis is true generally, this may be a known probability or an estimate.  $P(\textbf{D} |\theta)$ is the probability of getting \textbf{D} if $\theta$ is true, again this may be known or an estimate.  $P(\textbf{D})$ is the probability of getting \textbf{D} which is the sum of the probability of getting \textbf{D} if $\theta$ is true, multiplied by the probability that the hypothesis is true ($P(\theta)$), and probability of getting \textbf{D} if $\theta$ is false, multiplied by the probability that the hypothesis is false ( $P(\overline{\theta})$ or $ 1 - P(\theta)$).
+
+\begin{equation}
+    \label{eq:probd}
+    P(\textbf{D}) = (P(\theta) \cdot P(\textbf{D}|P(\theta)) + (P(\overline{\theta}) \cdot P(\textbf{D}|P(\overline{\theta})
+\end{equation}
+
+Whilst this can seem somewhat circular, consider the example of a person tests positive for a disease and you want to know what is the probability that they actually have it as the test has an error rate for both false negatives (person has the disease but tests negative) and false positives (person does not have the disease but tests positive).  Suppose you know that across the population as a whole $0.1\%$ (0.001) of people have the disease ($P(\theta)$) of those who are known to have the disease $99\%$ (0.99) test positive (so $1\%$ test negative, $P(D|\theta$) test positive. This gives you:
+\begin{itemize}
+    \item $P(\theta) = 0.001$
+    \item $P(\textbf{D}| \theta) = 0.99$
+    \item $P(\textbf{D}| \overline{\theta}) = 0.01$
+\end{itemize}
+
+So:
+\begin{equation}
+    P(\theta | \textbf{D}) = 0.001 \cdot \frac{0.99}{(0.001 \cdot 0.99) + (0.999 \cdot 0.01)}
+ \end{equation}
+ \begin{equation}
+    P(\theta | \textbf{D}) = 0.09 = 9\%
+\end{equation}
+
+This seems low but is a product of the relatively high probability of a false positive vs the population incidence of the disease, 10 times higher.  If 1,000 people were tested then 11 could test positive but only one have the disease, if the treatment of the disease is highly costly or has significant side effects then we may want to avoid having to treat 10 people who don't have the disease so that we know we've treated the 1 person or does.  To confirm you can run a second test and reapply the Bayes formula but this time your population is those people who have had one positive test so $P(\theta)$ is 0.09 ($9\%$).  Using the new value for $P(\theta)$ the probability of having the disease after two positive tests is now $91\%$.

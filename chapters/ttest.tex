@@ -1,0 +1,93 @@
+\chapter{T-Test} \label{t-test}
+
+\section{Overview}
+The t-test is used to determine if the difference between two samples of data is significant or not.  The test calculates a T value (or T score) and Degrees of Freedom (df) which are used with a standard table to look up values to determine the   level.
+
+The test can be one or two tailed, and can with paired or unpaired data.  A one tailed test is used where values are either all positive ($0 \leq y \leq \infty$) or all negative ($- \infty \leq y \leq 0$).  A two tailed test is used where values are both negative and positive ($- \infty \leq y \leq \infty$).  Paired data is where there is a relationship between the two data sets so it is possible to group the data meaningfully into pairs (for example the same person at two different points in time, such as before and after undergoing a treatment, or a pair of identical items that have been treated differently, such as cultures of different bacteria that have been divided into pairs of samples and one of each pair has been exposed to an antimicrobial agent but the other has not) unpaired data cannot be organised meaningfully into pairs (e.g. when comparing two different samples).
+
+\section{Assumptions}
+The t-test requires 4 assumptions to be made:
+\begin{enumerate}
+\item The data is numeric and on a continuous or ordinal scale
+\item The data sets are an unbiased random sample from the population (or are the whole population)
+\item The data when plotted approximates the Normal/Gaussian distribution (``Bell Curve'')
+\item The variance is similar in each data set
+\end{enumerate}
+
+\section{Calculate the T value}
+\subsection{Paired Datasets \emph{(Wilcoxon Signed Mixed-Pairs Signed-Rank Test)}}
+For paired data sets the calculation of the t value is relatively simple.
+
+If you have two datasets A and B of size n, first calculate the mean of each data set, this gives you $\bar A$ and $\bar B$.  
+
+\begin{equation}
+    \bar A = \frac{\sum A_i}{n} \text{\quad For 0 $\leq$ i $\leq n$}
+\end{equation}
+
+\begin{equation}
+\bar B = \frac{\sum B_i}{n} \text{\quad For 0 $\leq$ i $\leq n$}
+\end{equation}
+
+Next for each pair calculate the difference between each value and square the values then sum them and take the square root of the sum, this gives you the standard deviation $\sigma$.
+
+\begin{equation}
+    \sigma = \sqrt{\sum (A_i - B_i)^2} \text{\quad For 0 $\leq$ i $\leq n$}
+\end{equation}
+
+The T value is the difference between the means, divided by the standard deviation divided by the size of the data sets.
+
+\begin{equation}
+    T = \frac{\bar A - \bar B}{\frac{\sigma}{\sqrt n}}
+\end{equation}
+
+Next calculate the Degrees of Freedom, $df$ as one less than the size of the data sets.
+
+\begin{equation}
+    df = n - 1
+\end{equation}
+
+%\newpage
+%\begin{samepage}
+
+
+\subsubsection{Critical Values for $T$ in the \emph{Wilcoxon Signed Mixed-Pairs Signed-Rank Test}}
+
+
+The values below are the approximate critical values of T for two-tailed tests at level P. For a signicant result, the calculated T must be less  than or equal to the tabulated value.
+
+(Values of P are halved for one-tailed tests using $R_-$ and $R_+$.)
+
+\begin{table}[hbt]
+  \begin{tabular}{c|cc}
+    $df$ &  $P=0.10$ & $P=0.05$ \\
+     \hline
+    5 & 2 & - \\
+    6 & 2 & 0 \\
+    7 & 3 & 2 \\
+    8 & 5 & 3 \\
+    9 & 8 & 5 \\
+    10 & 10 & 8 \\
+    11 & 14 & 10 \\
+    12 & 17 & 13 \\
+    13 & 21 & 17 \\
+    14 & 26 & 21 \\
+    15 & 30 & 25 \\
+    16 & 36 & 29 \\
+    17 & 41 & 34 \\
+    18 & 47 & 40 \\
+    19 & 53 & 46 \\
+    20 & 60 & 52 \\
+    21 & 67 & 58 \\
+    22 & 75 & 65 \\
+    23 & 83 & 73 \\
+    24 & 91 & 81 \\
+    25 & 100 & 89
+  \end{tabular}
+  \caption{Critical Values for $T$ in the double tailed \emph{Wilcoxon Signed Mixed-Pairs Signed-Rank Test} \\ for $p = 0.1$ and $p=0.05$ and 5 to 25 degrees of freedom}
+\end{table}
+\subsubsection{T Values Lookup Table} 
+\begin{figure}[hbt]
+\includegraphics{t-vales.png}
+\caption{Critical values for $T$ in the \emph{Wilcoxon Signed Mixed-Pairs Signed-Rank Test} \\ for $p = 0.5$ and $p=0.0005$ and 1 to 1000 degrees of freedom}
+\end{figure}
+%\end{samepage}

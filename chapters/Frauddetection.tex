@@ -1,0 +1,38 @@
+\chapter{Validation and Fraud Detection}
+
+\section{Benford`s Law}
+Benford's Law\index[terms]{Benford's Law} was first suggested by the astronomer Simon Newcombe  \index[people]{Newcombe, Simon} 
+in 1881 when he noticed differences in wear in page numbers of books of logarithms.  He realised that the level of the wear seemed to relate to the value of the first digit of the numbers on that page, the lower that digit the more wear, implying that numbers with a lower first digit were looked up more often than those with higher first digits.  He calculated that if the first digit of a number is N then $p(N) = log(N+1) - log(N) $.  In 1938 the physicist Frank Benford \index[people]{Benford, Frank} validated Newcombe's work and published a paper on the subject, hence the law being named after him.  In 1972 the economist Hal Varian\index[people]{Varian, Hal} showed how Benford's law could be used to help detect financial fraud by highlighting low probability amounts in transactions.
+
+As well as helping to detect financial fraud, Benford's law has been found to be useful in checking other numerical results on other areas as well.  Care, however, must be taken to consider the limitations (see below).
+
+\begin{table}[hbt]
+    \centering
+    \begin{tabular}{c|c}
+    \hline
+    First Digit & Probability \\
+    \hline\hline
+       $1$  & $30.1\%$ \\ 
+       $2$  & $17.6\%$ \\  
+       $3$ & $12.5\%$ \\
+       $4$ & $9.7\%$ \\
+       $5$ & $7.9\%$ \\
+       $6$ & $6,7\%$ \\
+       $7$ & $5.8\%$ \\
+       $8$ & $5.1\%$ \\
+       $9$ & $4.6\%$ \\
+       \hline
+    \end{tabular}
+    \caption{Benford's Law Probabilities}
+    \label{tab:Benfords_Law_Probabilities}
+\end{table}
+
+\subsection{Limitations of Benford's Law}
+There are a number of limitations to Benford's Law for detecting fraudulent or incorrect figures.  A key limitation, and one that is often ignored, is that it can only highlight figures for further investigation, not definitively say that the figure is fraudulent, only that it is high or low probability.  Random variation means that smaller data sets may not comply with Benford's Law, estimates of the minimum dataset size required for Benford's law to be relevant vary from 50 to 500 elements. Data sets that naturally or by design have a distribution that does not comply with the distribution of Benford's law.  Examples of limitations to Benford's law include:
+\begin{itemize}
+\item Adult human height (in feet) - Few adult humans are under 3 foot tall (the shortest person every recorded was just under 2 foot) or over 7 foot (the tallest person every recorded was 0.9 of an inch under 9 foot tall).  Even allowing for those outliers the digit 1 will never be the first digit of an adult human height measured in feet.  Height measured in other units (e.g. cm) may be  better fit.
+\item IQ - Whilst the IQ scale runs from zero to 200 it was designed to follow the Normal Distribution,  the lowest measurable IQ is 36 and just $2.1\% $ of scores fall below 70, $44\%$ of scores call between 70 and 100 with the remaining scores being over 100.  This means that only a tiny fraction of scores will start with the numbers 2, 3, 4, 5 or 6 but a much higher proportion  of digit 9 will be seen than Benford's law predicts ($34\%$ of scores fall in the 85 to 100 range with a bias towards the high 90s).
+\item Invoices where there is limited variability in item price and most customers will only buy 1 item at a time.  A example of this is a web hosting provider who has only a small range of packages and most customers will have just one package.  For example if they have a basic package at £4.99 per month, a deluxe package at £9.99 a month and a commercial package at £99.99 a month and most customers pay monthly then then the vast majority of invoice amounts will start with a 4 or 9.
+\end{itemize}
+
+
