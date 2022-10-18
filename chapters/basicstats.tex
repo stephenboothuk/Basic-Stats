@@ -1,16 +1,29 @@
-\chapter{Basic Statistics} \label{Basic Statistics}
+\chapter{Introductory Statistics} \label{Introductory Statistics}
 \section{Probabilities and Percentages}
 \subsection{Probability}
-A probability is a way of saying that if you took a random sample of a given  size from a population how many will fit certain criteria.  The population can be any countable thing, including the results of an experiment; whether you are tossing a coin to see how many times it comes up heads or looking at people to see how many are over 5 feet tall probability can be calculated.
+A probability is a way of saying that if you took a random sample of a given size from a population how many will fit certain criteria.  The population can be any countable thing, including the results of an experiment; whether you are tossing a coin to see how many times it comes up heads or looking at people to see how many are over 5 feet tall probability can be calculated.
 
-Probabilities are often shown as fractions, decimals or ratios. Take a coin toss experiment.  We would expect that each time you toss the coin the probability of getting heads is the same as the probability of getting tails, they are equally probable.  Therefore if you tossed the coin twice you might expect that you would get heads once, if we define p(Heads) as the probability of getting heads then we could state that as a fraction\index[terms]{Probabilities!Fraction}
+Terms you might come across when talking about probability include \emph{Sample Space}, \emph{Test} or \emph{Experiment} and \emph{Event}.  The Sample Space is the set of all possible outcomes of a Test or Experiment.  A Test or Experiment is an observation of a phenomena to determine the outcome.  An Event is the occurrence of a particular outcome.
+
+Take tossing a coin that has two sides called Head and Tails.  Each toss of the coin is a Test of Experiment, the Sample Space is Heads and Tails and getting Heads is an Event with getting Tails being a different Event.
+
+Probabilities are often shown as fractions, decimals or ratios. Take the coin toss experiment.  We would expect that each time you toss the coin the probability of getting heads is the same as the probability of getting tails, they are equally probable.  Therefore if you tossed the coin many times you might expect that you would get heads as often as you get tails, if we define p(Heads) as the probability of getting heads then we could state that as a fraction\index[terms]{Probabilities!Fraction}
 :
 \begin{equation}
     p(Heads) = \frac{1}{2}
 \end{equation}
-So, you know however many times you toss the coin the number of times you get heads should, allowing for random variation, be half of the number of times you toss the coin.
 
-Most fractions can be stated as decimals\index[terms]{Probabilities!Decimal}, or at least approximated to a useful level of precision (that is to the point where any further precision would be masked by maximum precision that other figures can be measured to) such as
+So, you know however many times you toss the coin, the number of times you get heads should, allowing for random variation, be half of the number of times you toss the coin.
+
+This definition is called a Naive Definition of probability as it contains two implicit assumptions:
+\begin{itemize}
+    \item All outcomes are equally likely
+    \item All possible outcomes are known and counted
+\end{itemize}
+
+This may not always be the case, the coin may be weighted to land on one side more often than the other.
+
+Fractions can be stated as decimals\index[terms]{Probabilities!Decimal}, or at least approximated to a useful level of precision (that is to the point where any further precision would be masked by maximum precision that other figures can be measured to) such as
 \begin{equation}
     \frac{1}{3} \approx 0.33\dot3
 \end{equation}
@@ -37,8 +50,9 @@ p(Heads:Tails:Edge) = 9999:9999:2
 \subsection{Percentages as Probabilities}
 
 
-\subsubsection{Useful trick for calculating percentages}
+\subsubsection{Useful trick for calculating with percentages}
 
+A useful thing to remember about percentages (in fact it works for any fraction multiplied by a whole number, or something that can be turned into a whole number) is that $n\%$ of $m$ is the same as $m\%$ of $n$.  So if asked to calculate $12\%$ of $25$ you can just remember this trick and that $25\%$ is a quarter so switch the $12$ and $25$ around and you have a quarter of 12 which gives you $3$.
 
 \section{Averages}
 There are three types of average Mean, Mode and Median.

@@ -8,7 +8,7 @@ The test can be one or two tailed, and can with paired or unpaired data.  A one 
 \section{Assumptions}
 The t-test requires 4 assumptions to be made:
 \begin{enumerate}
-\item The data is numeric and on a continuous or ordinal scale
+\item The data is numeric and on a continuous or ordinal (that is in a rank order such as first, second, third \&c) scale
 \item The data sets are an unbiased random sample from the population (or are the whole population)
 \item The data when plotted approximates the Normal/Gaussian distribution (``Bell Curve'')
 \item The variance is similar in each data set
@@ -16,9 +16,10 @@ The t-test requires 4 assumptions to be made:
 
 \section{Calculate the T value}
 \subsection{Paired Datasets \emph{(Wilcoxon Signed Mixed-Pairs Signed-Rank Test)}}
-For paired data sets the calculation of the t value is relatively simple.
+For paired data sets (data where there is a natural link between each data point in one with the other, for example reading taken at the same geographic location at different points in time or health data from the same group of patients be or after a treatment, it can also include data from different but similar individuals such as where individuals in a clinical trial are matched on relevant health data then one of each pair is given one drug and another a different drug or placebo and their outcomes compared) the calculation of the t value is relatively simple.
 
-If you have two datasets A and B of size n, first calculate the mean of each data set, this gives you $\bar A$ and $\bar B$.  
+If you have two datasets A and B of size n, first calculate the mean of each data set, this gives you $\bar A$ and $\bar B$. 
+
 
 \begin{equation}
     \bar A = \frac{\sum A_i}{n} \text{\quad For 0 $\leq$ i $\leq n$}

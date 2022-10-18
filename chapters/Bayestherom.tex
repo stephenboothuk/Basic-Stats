@@ -29,3 +29,25 @@ So:
 \end{equation}
 
 This seems low but is a product of the relatively high probability of a false positive vs the population incidence of the disease, 10 times higher.  If 1,000 people were tested then 11 could test positive but only one have the disease, if the treatment of the disease is highly costly or has significant side effects then we may want to avoid having to treat 10 people who don't have the disease so that we know we've treated the 1 person or does.  To confirm you can run a second test and reapply the Bayes formula but this time your population is those people who have had one positive test so $P(\theta)$ is 0.09 ($9\%$).  Using the new value for $P(\theta)$ the probability of having the disease after two positive tests is now $91\%$.
+
+Bayes Theorem also applies to the \emph{Prosecutor's Fallacy} \index[terms]{Fallacy, Prosecutor's}.  This is a fallacy applied by prosecutors in court looking for evidence that will prove that that defendant committed the crime they are accused of and then making statements that misapply Bayes Theorem such as "Given the evidence against them the defendant cannot be innocent".  This particularly applies to tools such as the the Polygraph (aka 'Lie Detector').  Whilst in popular fiction this device is seen as infallible, in tests where subjects have been told to be truthful about certain topics and lie about others \footnote{typically when answering questions such as "Have you ever driven over the speed limit?" or "Have you ever had sex with someone other than your spouse/regular partner at the time?"} they have been found to be approximately 81\% accurate at spotting correctly spotting a lie with a 17\% false positive rate, but only 71\% accurate at correctly identifying a truthful response with 8\% false negative rate \footnote{The discrepancy between those figures and 100\%, 2\% for person is known to be lying and 22\% for the person is known to be telling the truth, is accounted for in the indeterminate results.}.  That means that for a population of 10,000 people questioned:
+\begin{itemize}
+    \item 1500 people are lying; of whom
+    \item 1215 people are correctly identified as lying; but
+    \item 120 people are incorrectly identified as telling the truth.
+    \item 8500 people are telling the truth; of whom
+    \item 6035 people are correctly identified as truthful; but
+    \item 1445 people are incorrectly identified as lying.
+    \item 1185 people have an inconsistent result.
+\end{itemize}
+
+As the prosecutor is looking for evidence to prove their case if the defendant is innocent, and questioned answered that they did not commit the crime, and show to be truthful (6035 out of 10,000) or the 120 people guilty but who still answered no, then they will discount the result.  However if that person is innocent and was incorrectly identified as lying they will include the result.
+
+
+
+
+
+
+
+
+

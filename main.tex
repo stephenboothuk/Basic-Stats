@@ -1,5 +1,8 @@
-\documentclass[a4paper, 12pt, oneside, fleqn]{book}
+\documentclass[a4paper, 12pt, fleqn]{book}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{imakeidx}
 \usepackage{pdfpages}
 \usepackage[nobottomtitles]{titlesec}
 \usepackage[font=scriptsize]{caption}
@@ -8,14 +11,32 @@
 \usepackage{wrapfig}
 %\usepackage{makeidx,showidx}
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{harvard}
 \usepackage{longtable}
-\usepackage{imakeidx}
+%\usepackage{imakeidx}
 %\usepackage{makeidx}
 \usepackage{pgfplots}
 \usepackage{url}
 \usepackage{lscape}
+\usepackage[Conny]{fncychap}
+%Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
 
+\usepackage{./packages/SBooth}
+
+\hypersetup{
+pdftitle={Statistics for Data Analysis by Stephen Booth},
+pdfsubject={Statistics for Data Analysis},
+pdfauthor={Stephen Booth},
+pdfkeywords={Statistics Data Analysis},
+colorlinks=true,
+linkcolor=blue
+}
+
+\titleclass{\part}{top}
+\titleformat{\part}[display]
+  {\normalfont\huge\bfseries}{\centering\partname\  \thepart}{20pt}{\Huge\centering}
+  
 \pgfplotsset{compat=1.17}
 \pgfmathdeclarefunction{gauss}{2}{%
   \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
@@ -23,30 +44,38 @@
 
 \setcounter{secnumdepth}{5}
 
-\title{Statistics for BCS/ISEB Level 4 Apprenticeship in Data Analysis}
-\author{Stephen Booth MIET MBCS OLA \\ \url{https://orcid.org/0000-0003-3939-8493}}
-%\author{}
-%\date{May 2021}
+\include{./titlepage}
 %\makeindex
 \makeindex[name=terms, columns=2, title= Index of Terms]
-\makeindex[name=people, columns=1, title = Notable People in Statistics]
+\makeindex[name=people, columns=2, title = Notable People in Statistics]
 \begin{document}
-
+% \pdftitle{Statistics for Data Analysis by Stephen Booth}
+%\pdfbookmark[section]{\contentsname}{toc}
 
 \maketitle
 \tableofcontents
 \listoffigures
 \listoftables
 
+\part{Basic Statistics} \label{Basic Statistics P}
 \include{./chapters/basicstats}
 \include{./chapters/Distributions}
 \include{./chapters/Bayestherom}
+
+\part{Hypothesis Testing} \label{Hypothesis Testing}
 \include{./chapters/ttest}
 \include{./chapters/ftest}
 \include{./chapters/ztest}
 
+\part{Practical Applications} \label{Practical Applications}
 \include{chapters/Frauddetection}
+\include{chapters/CronbachsAlpha}
 
+\part{Appendices} \label{Appendices}
+\appendix
+\include{./chapters/UsefulMath}
+\include{./chapters/Calculus}
+\include{./chapters/quotes}
 \cleardoublepage
 \printindex[terms]
 
